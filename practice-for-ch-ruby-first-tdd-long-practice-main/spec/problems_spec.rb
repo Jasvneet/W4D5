@@ -27,5 +27,53 @@ describe "#my_transpose" do
     end 
 end 
 
+describe "#stock_picker" do 
+    it "should return the most profitable pair of days on 
+    which to buy and sell stock." do 
+        expect(stock_picker([33, 54, 68, 21, 26])).to eq([0, 2])
+    end
+end
+
+describe TowersOfHanoi do 
+    subject(:tower) { TowersOfHanoi.new([3, 2, 1]) }
+    
+
+    describe '#initialize' do
+        it 'takes in the starting stack argument' do 
+            expect(tower.stack1).to eq([3, 2, 1])
+            expect(tower.stack2).to eq([])
+            expect(tower.stack3).to eq([])
+        end 
+    end
+
+    # describe '#move' do 
+    #     it "raise error when provided invalid move" do 
+    #         expect{tower.move}.to raise_error('Invalid Move')
+
+    #     end
+
+    #     it "should place selected disks onto selected stacks" do 
+    #         expect(tower.move).to eq()
+    #     end
+    # end
+
+    describe '#win' do
+        it "it should return true if game is won" do
+            tower.stack1 = []
+            tower.stack2 = []
+            tower.stack3 = [3, 2, 1]
+            expect(tower.win).to be(true)
+        end
+    end
+
+
+end
+
+# move gets from first stack and place on second stack 
+# puts 'pick where you want to place the disk, ex: stack1 stack2'
+
+# win if stack1 && stack2 empty
+
+
 
 
